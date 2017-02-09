@@ -1,0 +1,3 @@
+zone.dragon.dropwizard.jmx.connectors.JMiniXConnectorFactory
+zone.dragon.dropwizard.jmx.connectors.RMIConnectorFactory
+zone.dragon.dropwizard.jmx.connectors.JolokiaConnectorFactory
