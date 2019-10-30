@@ -1,4 +1,4 @@
-# Dropwizard JMX Integration
+# Dropwizard JMX Integration [![Build Status](https://jenkins.dragon.zone/buildStatus/icon?job=dragonzone/dropwizard-jmx/master)](https://jenkins.dragon.zone/blue/organizations/jenkins/dragonzone%2Fdropwizard-jmx/activity?branch=master) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/zone.dragon.dropwizard/dropwizard-jmx/badge.svg)](https://maven-badges.herokuapp.com/maven-central/zone.dragon.dropwizard/dropwizard-jmx/) [![Javadoc](http://javadoc-badge.appspot.com/zone.dragon.dropwizard/dropwizard-jmx.svg)](http://www.javadoc.io/doc/zone.dragon.dropwizard/dropwizard-jmx)
 
 This bundle enables JMX features for a dropwizard application. Currently supported implementations are
 
