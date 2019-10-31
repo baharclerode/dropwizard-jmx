@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.jolokia.http.AgentServlet;
+import org.jolokia.restrictor.AllowAllRestrictor;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -33,5 +34,10 @@ public class JolokiaConnectorFactory implements JmxConnectorFactory {
     public void applyConnector(Environment environment, JMXAuthenticator authenticator) {
         Dynamic jmxServlet = environment.admin().addServlet("jolokia", AgentServlet.class);
         jmxServlet.addMapping(String.format("/%s/*", getPath()));
+        jmxServlet.addMapping(String.format("/%s", getPath()));
+        jmxServlet.setInitParameter("restrictorClass", AllowAllRestrictor.class.getName());
+
+        environment.admin().addFilter("jolokiaAuthFilter", new JMXAuthenticatorServletFilter(authenticator))
+                   .addMappingForServletNames(null, false, "jolokia");
     }
 }

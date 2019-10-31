@@ -32,4 +32,5 @@ Then, add configuration to tell the bundle which connectors to initialize and ho
 ## TODO
 
 * Add MX4J support
-* Make authenticator control non-RMI connectors
+* Figure out why JminiX isn't working on JDK11 https://github.com/lbovet/jminix/issues/15
+* Add [Hawt.io](https://hawt.io/) support

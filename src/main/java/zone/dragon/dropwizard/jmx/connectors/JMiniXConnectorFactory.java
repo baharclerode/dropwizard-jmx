@@ -33,5 +33,9 @@ public class JMiniXConnectorFactory implements JmxConnectorFactory {
     public void applyConnector(Environment environment, JMXAuthenticator authenticator) {
         Dynamic jmxServlet = environment.admin().addServlet("jminix", MiniConsoleServlet.class);
         jmxServlet.addMapping(String.format("/%s/*", getPath()));
+        jmxServlet.addMapping(String.format("/%s", getPath()));
+
+        environment.admin().addFilter("jminixAuthFilter", new JMXAuthenticatorServletFilter(authenticator))
+                   .addMappingForServletNames(null, false, "jminix");
     }
 }
